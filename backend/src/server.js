@@ -14,9 +14,10 @@ import { db, json } from './db.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
+app.set('trust proxy', 1);
 const PORT = Number(process.env.PORT || 8080);
 const isProd = process.env.NODE_ENV === 'production';
-const demoEnabled = !isProd && process.env.DEMO_MODE !== 'false';
+const demoEnabled = process.env.DEMO_MODE === 'true';
 const tokenSecret = process.env.DEMO_TOKEN_SECRET || 'local-demo-only-change-this-secret';
 const uploadDir = path.resolve(__dirname, '../uploads');
 const familyPhotoDir = path.resolve(__dirname, '../family-photos');
