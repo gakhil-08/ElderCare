@@ -1,0 +1,15 @@
+.git
+**/node_modules
+**/.env
+**/.env.*
+!**/.env.example
+frontend/dist
+backend/data/**
+!backend/data/.gitkeep
+backend/uploads/**
+!backend/uploads/.gitkeep
+backend/family-photos/**
+!backend/family-photos/.gitkeep
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal

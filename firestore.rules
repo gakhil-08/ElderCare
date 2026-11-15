@@ -1,0 +1,11 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // The current demo persists to local SQLite, not Firestore.
+    // Keep direct client access denied until the Firestore repository,
+    // membership documents and tested rules are implemented together.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

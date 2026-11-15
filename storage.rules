@@ -1,0 +1,10 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // The current demo uses private local uploads, not Firebase Storage.
+    // Default-deny prevents accidental public medical-file access.
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}
